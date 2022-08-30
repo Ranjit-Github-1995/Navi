@@ -1,0 +1,248 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+ul li{
+    list-style: none;
+}
+ul li a{
+    text-decoration: none;
+}
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0px auto;
+}
+
+section.header{
+    background-color: aqua;
+    padding: 25px 0;
+    width: 100%;
+    display: flex;
+}
+section.header .navSec{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+section.header .logo{
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+}
+.nav{
+    width: 100%;
+}
+.nav ul{
+    display: flex;
+    justify-content: flex-end;
+}
+.nav ul li{
+    position: relative;
+}
+.nav ul li a{
+    padding: 7px 15px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    text-transform: capitalize;
+}
+.nav ul li a:hover{
+    background-color: #111;
+    transition: 0.5s;
+    border-radius: 7px;
+}
+ul.sub_menu {
+    position: absolute;
+    display: block;
+    width: 200px;
+    background: #fff;
+    box-shadow: -7.794px 4.5px 20px rgba(17, 79, 160, 0.17);
+    top: 110%;
+    padding: 10px 0;
+    border-radius: 5px;
+    z-index: 99;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    opacity: 0;
+}
+ul.sub_menu li a{
+    font-size: 16px;
+    font-weight: 500;
+    color: #111;
+    display: block;
+}
+
+.nav ul li:hover ul.sub_menu{
+    visibility: visible;
+    opacity: 1;
+    top: 100%;
+}
+.nav ul li:hover ul.sub_menu li a{
+    border-radius: 0px;
+    background: none;
+    color: #111;
+    padding: 10px 5px;
+    text-transform: capitalize;
+
+}
+
+
+
+/***** new css *****/
+
+nav{
+    background: #1b1b1b;
+    display: flex;
+}
+.topHeader{
+    display: flex;
+    justify-content: space-between;
+}
+nav::after{
+    content: '';
+    clear: both;
+    display: table;
+}
+nav ul{
+    list-style: none;
+    margin-right: 40px;
+    position: relative;
+}
+nav ul li{
+    display: inline-block;
+    margin: 0 5px;
+}
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    line-height: 70px;
+    font-size: 18px;
+    padding: 8px 15px;
+}
+
+nav ul li ul li a:hover{
+    color: cyan;
+    box-shadow: none;
+}
+nav ul li ul{
+    position: absolute;
+    top: 70px;
+    opacity: 0;
+    visibility: hidden;
+    transition: top .3s;
+    background-color: #111;
+}
+nav ul li:hover > ul{
+    opacity: 1;
+    top: 70px;
+    visibility: visible;
+}
+nav ul li ul li{
+    position: relative;
+    margin: 0px;
+    width: 150px;
+    float: none;
+    display: list-item;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+nav ul li ul li a{
+    line-height: 50px;
+}
+nav .logo{
+    color: #fff;
+    font-size: 27px;
+    font-weight: 600;
+    line-height: 70px;
+    padding-left: 60px;
+}
+nav .logo a{
+    color: #fff;
+    text-decoration: none;
+}
+span.fa-plus{
+    margin-left: 5px;
+    font-size: 15px;
+}
+
+.show, .icon,input{
+    display: none;
+}
+@media (max-width: 991px){
+    nav{
+        display: block;
+        padding: 40px 0;
+    }
+    .topHeader{
+        display: block;
+    }
+    nav ul{
+        margin-right: 0px;
+    }
+    nav ul li, nav ul li ul li{
+        display: block;
+        width: 100%;
+        border: none;
+    }
+    nav ul li ul{
+        top: 70px;
+        position: static;
+        border-top: none;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+        background: none;
+    }
+    nav ul li ul li a{
+        padding-left: 20px;
+        line-height: 15px;
+    }
+    .show{
+        display: block;
+        color: #fff;
+        font-size: 18px;
+        padding: 5px 0px;
+        cursor: pointer;
+    }
+    .icon{
+        display: block;
+        color: #fff;
+        position: absolute;
+        right: 30px;
+        font-size: 25px;
+        cursor: pointer;
+        top: 25px;
+    }
+    nav .logo{
+        padding-left: 0px;
+        line-height: 0;
+    }
+    .show:hover{
+        color: cyan;
+    }
+    .show + a, ul{
+        display: none;
+    }
+    [id^=btn]:checked + ul{
+        display: block;
+        top: 30px;
+    }
+    nav ul li a{
+        line-height: 15px;
+        display: block;
+        padding-left: 0px;
+    }
+}
+
